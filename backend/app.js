@@ -76,9 +76,6 @@ class App {
     }
 
     handleRequests(req, res) {
-        res.setHeader('Access-Control-Allow-Origin', 'https://comp4537lab4frontend.vercel.app'); // Allow your frontend URL
-        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); // Allowed methods
-        res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // Allowed headers
         if (req.method === 'OPTIONS') {
             res.writeHead(200);  // Respond with HTTP 200 OK status
             res.end();
