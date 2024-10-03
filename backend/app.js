@@ -1,7 +1,6 @@
 const userStrings = require('./lang/en/en');
 const utils = require('./modules/utils');
 const http = require('http');
-const fs = require('fs');
 const {IO, LocalWriter, LocalReader} = require("./modules/io");
 
 
@@ -77,9 +76,9 @@ class App {
     }
 
     handleRequests(req, res) {
-        res.setHeader('Access-Control-Allow-Origin', '*'); // Allow all origins
-        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); // Allow specific HTTP methods
-        res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // Allow specific headers
+        res.setHeader('Access-Control-Allow-Origin', 'https://comp4537lab4frontend.vercel.app'); // Allow your frontend URL
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); // Allowed methods
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // Allowed headers
         if (req.method === 'OPTIONS') {
             res.writeHead(200);  // Respond with HTTP 200 OK status
             res.end();
