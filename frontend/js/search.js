@@ -44,11 +44,14 @@ class Search {
         xhr.open("GET", `${serverURL}/api/definitions?word=${word}`, true);
         xhr.onload = (e) => {
             if (xhr.status === 200) {
+
+                console.log(xhr.responseText)
                 const data = JSON.parse(xhr.responseText);
 
                 this.messageContainer.innerHTML = data.definition;
                 this.clearInputs()
             } else {
+                console.log(xhr.responseText)
                 const data = JSON.parse(xhr.responseText);
                 this.messageContainer.innerHTML = data.message;
             }
